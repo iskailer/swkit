@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { PouchDbCardRepository } from '../../src/tools/duvido/infrastructure/pouchdb-card-repository.js';
+class MemoryPouch { constructor() { this.documents = new Map(); } async put(document) { const rev = String((Number(document._rev ?? '0')) + 1); this.documents.set(document._id, { ...document, _rev: rev }); return { ok: true, id: document._id, rev }; } async get(id) { const document = this.documents.get(id); if (!document) { const error = new Error('missing'); error.status = 404; throw error; } return { ...document }; } async allDocs() { return { rows: [...this.documents.values()].map((doc) => ({ doc: { ...doc } })) }; } }
+const card = { _id: 'card-1', type: 'duvido-card', question: { text: 'Pergunta' }, answer: { text: 'Resposta' }, origin: 'user', isDeleted: false };
+test('repository creates and finds a card', async () => { const repository = new PouchDbCardRepository(new MemoryPouch()); await repository.create(card); assert.equal((await repository.find('card-1')).question.text, 'Pergunta'); });
+test('repository updates a card', async () => { const repository = new PouchDbCardRepository(new MemoryPouch()); await repository.create(card); assert.equal((await repository.update('card-1', { question: { text: 'Nova pergunta' } })).question.text, 'Nova pergunta'); });
+test('repository soft deletes a card while preserving its record', async () => { const repository = new PouchDbCardRepository(new MemoryPouch()); await repository.create({ ...card, origin: 'seed' }); await repository.delete('card-1'); assert.equal(await repository.find('card-1'), null); assert.equal((await repository.find('card-1', { includeDeleted: true })).isDeleted, true); });

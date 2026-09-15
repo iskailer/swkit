@@ -1,0 +1,19 @@
+{
+  "name": "s-w-toolkit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests",
+    "serve": "npx serve dist"
+  },
+  "dependencies": {
+    "@material/web": "^2.4.1",
+    "pouchdb": "^9.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "serve": "^14.2.4"
+  }
+}

@@ -1,0 +1,10 @@
+<!doctype html>
+<meta charset="UTF-8" />
+<script>
+  // GitHub Pages has no SPA rewrite. Redirect a direct tool URL to its hash route.
+  const knownRoutes = ['timer', 'duvido'];
+  const parts = location.pathname.split('/').filter(Boolean);
+  const route = knownRoutes.includes(parts.at(-1)) ? parts.pop() : '';
+  const base = `/${parts.join('/')}${parts.length ? '/' : ''}`;
+  location.replace(`${location.origin}${base}#${route ? `/${route}` : ''}`);
+</script>
