@@ -9,7 +9,7 @@ export const tools = Object.freeze([
   },
   {
     id: 'duvido',
-    name: 'Duvido',
+    name: 'Duvido que validou!',
     description: 'Jogo de perguntas para energizar o grupo.',
     route: '/duvido',
     icon: '?',

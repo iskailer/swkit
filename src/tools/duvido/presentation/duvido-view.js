@@ -15,11 +15,41 @@ export function renderDuvido(root, goHome, manageCards) {
   }
 
   function showTutorial() {
-    page.innerHTML = `<header class="duvido-topbar"><button class="back-link" type="button">← Ferramentas</button><p class="eyebrow">Duvido</p></header>
-      <main class="duvido-tutorial"><p class="duvido-tutorial__badge">Como jogar</p><h1>Desafie o grupo.</h1><ol><li>Leia a pergunta em voz alta.</li><li>Toque ou clique na carta para virá-la.</li><li>Revele a resposta e siga para a próxima.</li></ol><div class="duvido-actions"><md-filled-button class="start-game">Começar jogo</md-filled-button><md-text-button class="skip-tutorial">Pular tutorial</md-text-button><md-outlined-button class="manage-cards">Gerenciar cartas</md-outlined-button></div></main>`;
+    page.innerHTML = `<header class="duvido-topbar">
+    <button class="back-link" type="button">← Ferramentas</button>
+    <p class="eyebrow">Duvido</p></header>
+    <main class="duvido-tutorial">
+      <p class="duvido-tutorial__badge">Como jogar</p>
+      <h1>duvido que validou!</h1>
+      <p class="duvido-tutorial__badge">Regras</p>
+      <ol>
+        <li>O facilitador lê a pergunta do card, mas não revela a resposta.</li>
+        <li>Um jogador inicia falando um <b>número</b> como seu palpite.</li>
+        <li>Na sua vez, o próximo jogador deve escolher:</li>
+        <ul>
+          <li><b>Aumentar o número:</b> falar um número maior que o anterior; ou</li>
+          <li><b>Duvidar:</b> ele precisa falar <strong>"duvido que validou"</strong> e falar um número menor.</li>
+        </ul>
+        <li>Quando alguém duvida, a rodada termina. A resposta correta é revelada clicando na carta para virá-la.</li>
+        <li>Ganha o jogador que tiver o número mais próximo da resposta correta.</li>
+        <li>O jogador que perder desce do palco e outro integrante da mesma equipe assume seu lugar.</li>
+      </ol>
+      <div class="duvido-actions">
+        <md-filled-button class="start-game">Começar jogo</md-filled-button>
+        <md-outlined-button class="manage-cards">Gerenciar cartas</md-outlined-button>
+      </div>
+      <p class="duvido-tutorial__badge">Dinâmica das equipes</p>
+       <ul>  
+        <li>É recomendado que cada equipe do Startup Weekend coloque um jogador no palco.</li>
+        <li>A cada derrota, o jogador deixa o palco e dá lugar a outro integrante da sua equipe.</li>
+        <li>A dinâmica continua até que não reste nenhum jogador de uma das equipes.</li>
+       <ul> 
+       </br>
+       </br>
+🏆 Atenção: estratégia, conhecimento e coragem para duvidar podem fazer toda a diferença!
+    </main>`;
     page.querySelector('.back-link').addEventListener('click', goHome);
     page.querySelector('.start-game').addEventListener('click', startGame);
-    page.querySelector('.skip-tutorial').addEventListener('click', startGame);
     page.querySelector('.manage-cards').addEventListener('click', manageCards);
   }
 

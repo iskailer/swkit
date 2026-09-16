@@ -10,7 +10,7 @@ class CardStore {
 
 test('seed is idempotent and does not recreate a soft-deleted card', async () => {
   const repository = new CardStore();
-  assert.equal((await ensureSeedCards(repository)).length, 4);
+  assert.equal((await ensureSeedCards(repository)).length, 59);
   assert.deepEqual(await ensureSeedCards(repository), []);
   repository.cards.set(seedCards[0]._id, { ...seedCards[0], isDeleted: true });
   assert.deepEqual(await ensureSeedCards(repository), []);
