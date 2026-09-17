@@ -6,6 +6,7 @@ import {
 } from '../domain/timer.js';
 
 import { WebAudioAlert } from '../infrastructure/web-audio-alert.js';
+import { renderToolFooter } from '../../shared/presentation/tool-footer.js';
 
 const presets = [
   ['30s', 30],
@@ -18,7 +19,7 @@ const presets = [
   ['30 min', 1800],
 ];
 
-export function renderTimer(root, goHome) {
+export function renderTimer(root, goHome, collaborators = []) {
   const page = document.createElement('section');
   page.className = 'timer-page';
 
@@ -449,4 +450,9 @@ export function renderTimer(root, goHome) {
   showSetup();
 
   root.append(page);
+  page.append(
+  renderToolFooter({
+    collaborators,
+  })
+);
 }

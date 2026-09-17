@@ -6,6 +6,7 @@ export const tools = Object.freeze([
     route: '/timer',
     icon: '◷',
     tileClass: 'tool-tile--timer',
+    collaborators: ['Iskailer I. Rodrigues'],
   },
   {
     id: 'duvido',
@@ -14,6 +15,16 @@ export const tools = Object.freeze([
     route: '/duvido',
     icon: '?',
     tileClass: 'tool-tile--duvido',
+    collaborators: ['Iskailer I. Rodrigues'],
+  },
+  {
+    id: 'todo',
+    name: 'Todo List',
+    description: 'Lista de tarefas para organizar a equipe.',
+    route: '/todo',
+    icon: '✓',
+    tileClass: 'tool-tile--todo',
+    collaborators: ['Iskailer I. Rodrigues'],
   },
 ]);
 

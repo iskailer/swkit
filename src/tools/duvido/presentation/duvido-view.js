@@ -1,7 +1,8 @@
 import { GameSession } from '../domain/game-session.js';
 import { getCardRepository } from '../infrastructure/browser-card-repository.js';
+import { renderToolFooter } from '../../shared/presentation/tool-footer.js';
 
-export function renderDuvido(root, goHome, manageCards) {
+export function renderDuvido(root, goHome, manageCards, collaborators = []) {
   const page = document.createElement('section');
   page.className = 'duvido-page';
   let game;
@@ -40,7 +41,7 @@ export function renderDuvido(root, goHome, manageCards) {
       </div>
       <p class="duvido-tutorial__badge">Dinâmica das equipes</p>
        <ul>  
-        <li>É recomendado que cada equipe do Startup Weekend coloque um jogador no palco.</li>
+        <li>É recomendado que cada equipe do evento coloque um jogador no palco.</li>
         <li>A cada derrota, o jogador deixa o palco e dá lugar a outro integrante da sua equipe.</li>
         <li>A dinâmica continua até que não reste nenhum jogador de uma das equipes.</li>
        <ul> 
@@ -122,4 +123,9 @@ export function renderDuvido(root, goHome, manageCards) {
 
   showTutorial();
   root.append(page);
+  page.append(
+  renderToolFooter({
+    collaborators,
+  })
+);
 }

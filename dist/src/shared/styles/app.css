@@ -16,6 +16,7 @@ h1 { margin: 0; font-family: var(--font-display); font-size: clamp(2.7rem, 10vw,
 .tool-tile:active { transform: translateY(0); }
 .tool-tile--timer { background: linear-gradient(135deg, #2f9b57, var(--color-primary)); }
 .tool-tile--duvido { background: linear-gradient(135deg, #4d91ce, var(--color-accent)); }
+.tool-tile--todo { background: linear-gradient(135deg, #8a5fbf, #5f3b82); }
 .tool-tile__icon { align-self: start; font-family: var(--font-display); font-size: 5rem; line-height: .8; }
 .tool-tile__name { align-self: end; font-family: var(--font-display); font-size: 2.3rem; letter-spacing: .03em; text-transform: uppercase; }
 .tool-tile__description { margin-top: var(--spacing-xs); color: rgb(255 255 255 / 88%); line-height: 1.35; }
@@ -43,3 +44,178 @@ h1 { margin: 0; font-family: var(--font-display); font-size: clamp(2.7rem, 10vw,
 .duvido-page { min-height: 100vh; padding: var(--spacing-lg); color: var(--color-text); background: linear-gradient(140deg, #e7efe9, #dbe8f1); }.duvido-topbar { display: flex; align-items: start; justify-content: space-between; width: min(100%, 960px); margin: 0 auto; }.duvido-topbar .back-link { margin: 0; }.duvido-progress { margin: 0; font-weight: 700; color: var(--color-text-secondary); }.duvido-tutorial, .duvido-complete { display: grid; width: min(100%, 620px); min-height: calc(100vh - 100px); margin: 0 auto; align-content: center; gap: var(--spacing-lg); }.duvido-tutorial__badge { margin: 0; color: var(--color-primary); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }.duvido-tutorial h1, .duvido-complete h1 { font-size: clamp(2.6rem, 12vw, 5rem); color: var(--color-primary); }.duvido-tutorial ol { display: grid; gap: var(--spacing-md); margin: 0; padding-left: var(--spacing-xl); line-height: 1.45; }.duvido-actions { display: flex; flex-wrap: wrap; gap: var(--spacing-md); align-items: center; }.duvido-game { display: grid; width: min(100%, 760px); margin: var(--spacing-lg) auto 0; gap: var(--spacing-lg); justify-items: center; }.duvido-card { display: block; width: min(100%, 680px); aspect-ratio: 4 / 3; padding: 0; border: 0; border-radius: var(--radius-lg); background: transparent; cursor: pointer; perspective: 1200px; box-shadow: var(--shadow-2); }.duvido-card__face { display: grid; width: 100%; height: 100%; padding: var(--spacing-lg); grid-template-rows: auto 1fr auto auto; gap: var(--spacing-sm); overflow: hidden; border-radius: inherit; background: #fff; transform-style: preserve-3d; }.duvido-card__face--flipped { animation: duvido-flip 340ms ease; }.duvido-card__type { color: var(--color-accent); font-size: .85rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }.duvido-card__image-slot { min-height: 0; }.duvido-card__image { width: 100%; height: 100%; min-height: 120px; object-fit: contain; border-radius: var(--radius-md); background: #eef3f0; }.duvido-card__text { font-size: clamp(1.1rem, 3.6vw, 1.65rem); font-weight: 700; line-height: 1.25; }.duvido-card__hint { color: var(--color-text-secondary); font-size: .85rem; }.duvido-card:hover .duvido-card__hint, .duvido-card:focus-visible .duvido-card__hint { color: var(--color-accent); font-weight: 700; }.used-deck { width: 100%; margin-top: var(--spacing-sm); }.used-deck > p { margin: 0 0 var(--spacing-sm); color: var(--color-text-secondary); font-size: .9rem; font-weight: 700; }.used-deck__cards { display: flex; min-height: 30px; overflow-x: auto; padding-bottom: var(--spacing-sm); }.used-deck__card { display: grid; width: 92px; height: 58px; margin-right: -46px; padding: var(--spacing-xs); align-content: end; overflow: hidden; border: 2px solid #fff; border-radius: var(--radius-sm); background: var(--color-accent); color: #fff; font-size: .62rem; box-shadow: var(--shadow-1); }.duvido-complete { text-align: center; justify-items: center; }.duvido-complete > p:not(.eyebrow) { max-width: 38ch; margin: 0; color: var(--color-text-secondary); line-height: 1.5; } @keyframes duvido-flip { 0%, 100% { transform: rotateY(0); } 50% { transform: rotateY(90deg); } }
 @media (min-width: 600px) { .duvido-page { padding: var(--spacing-2xl); } .duvido-card__face { padding: var(--spacing-xl); } }
 .card-manager { min-height: 100vh; padding: var(--spacing-lg); background: var(--color-surface); color: var(--color-text); }.card-manager__header, .card-manager__content { width: min(100%, 900px); margin: 0 auto; }.card-manager__header h1 { color: var(--color-primary); font-size: clamp(2.4rem, 10vw, 4.5rem); }.card-manager__header > p:not(.eyebrow) { color: var(--color-text-secondary); }.card-manager__content { display: grid; gap: var(--spacing-xl); margin-top: var(--spacing-xl); }.card-manager__content h2 { margin: 0 0 var(--spacing-sm); }.card-list { display: grid; gap: var(--spacing-sm); }.card-list__item { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); padding: var(--spacing-md); border-radius: var(--radius-md); background: #fff; box-shadow: var(--shadow-1); }.card-list__item p { margin: 0; font-weight: 700; }.empty-state { margin: 0; color: var(--color-text-secondary); }.card-editor { width: min(94vw, 700px); padding: 0; border: 0; border-radius: var(--radius-lg); box-shadow: var(--shadow-2); }.card-editor::backdrop { background: rgb(0 0 0 / 55%); }.card-editor__form { display: grid; gap: var(--spacing-md); padding: var(--spacing-lg); }.card-editor__top { display: flex; align-items: center; justify-content: space-between; }.card-editor__top h2 { margin: 0; }.close-editor { border: 0; background: none; font-size: 2rem; cursor: pointer; }.card-editor label { display: grid; gap: var(--spacing-xs); font-weight: 700; }.card-editor small { min-height: 1em; color: var(--color-error); font-weight: 400; }.card-editor textarea { width: 100%; resize: vertical; padding: var(--spacing-sm); border: 1px solid var(--color-border); border-radius: var(--radius-sm); font: .8rem/1.4 ui-monospace, monospace; }.svg-preview { min-height: 0; }.svg-preview img { display: block; width: min(100%, 260px); aspect-ratio: 4 / 3; object-fit: contain; border-radius: var(--radius-sm); background: #eef3f0; }
+/* ========================================
+   TODO
+   ======================================== */
+
+.todo-page {
+  min-height: 100vh;
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.todo-topbar {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+.todo-topbar .back-link {
+  margin-bottom: var(--spacing-xl);
+}
+
+.todo-topbar h1 {
+  color: var(--color-primary);
+  font-size: clamp(2.4rem, 10vw, 4.5rem);
+}
+
+.todo-description {
+  max-width: 620px;
+  margin: var(--spacing-lg) 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.todo-content {
+  display: grid;
+  gap: var(--spacing-xl);
+  width: min(100%, 900px);
+  margin: var(--spacing-xl) auto 0;
+}
+
+.todo-form {
+  display: flex;
+  align-items: end;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-1);
+}
+
+.todo-input {
+  flex: 1;
+}
+
+.todo-add-button {
+  flex-shrink: 0;
+}
+
+.todo-error {
+  min-height: 1.25em;
+  margin: calc(-1 * var(--spacing-md)) 0 0;
+  color: var(--color-error);
+  font-size: .9rem;
+}
+
+.todo-list {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-1);
+}
+
+.todo-item__checkbox {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.todo-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-item__text {
+  display: block;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.todo-item--completed .todo-item__text {
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+}
+
+.todo-item__delete {
+  flex: 0 0 auto;
+}
+
+.todo-empty {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 600px) {
+  .todo-page {
+    padding: var(--spacing-2xl);
+  }
+
+  .todo-form {
+    padding: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 599px) {
+  .todo-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-add-button {
+    width: 100%;
+  }
+}
+/* ========================================
+   TOOL FOOTER
+   ======================================== */
+
+.tool-footer {
+  width: min(100%, 900px);
+  margin: var(--spacing-2xl) auto 0;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.tool-footer__content {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.tool-footer__title {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.tool-footer__collaborators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.tool-footer__collaborator {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--color-text);
+  font-size: .9rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-1);
+}
